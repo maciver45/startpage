@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Startpage</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--
+Startpage Gaijin from https://www.gaijin.at/en/software/startpages
+-->
+<style>
+
+body {
+	font-family: Verdana, Arial, sans-serif;
+	background-color: #fff;
+	color: #000;
+	margin: 0;
+}
+
+a {
+	color: #06c;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #090;
+	text-decoration: underline;
+}
+
+input, select {
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 16px;
+	background-color: #fff;
+	color: #444;
+}
+
+.div_table {
+	display: table;
+}
+.div_row {
+	display: table-row;
+}
+.div_cell {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.topnav_cell {
+	height: 48px;
+	line-height: 48px;
+	white-space: nowrap;
+}
+
+.topnav_link {
+	font-family: Arial, sans-serif;
+	color: #666;
+	text-decoration: none;
+}
+.topnav_link:hover {
+	color: #666;
+	text-decoration: none;
+}
+
+.topnav_link div {
+	background-color: #f6f6f6;
+	text-align: center;
+}
+.topnav_link:hover div {
+	background-color: #eee;
+}
+.topnav_link:active div {
+	background-color: #ddd;
+}
+
+.search {
+	margin-top: 56px;
+}
+
+.search_space {
+	margin-bottom: 48px;
+}
+
+.searchbox {
+	width: 75%;
+	max-width: 800px;
+	padding: 8px;
+	margin: 16px auto;
+}
+
+.searchbox_icon {
+	padding-right: 8px;
+}
+
+.searchbox img {
+	vertical-align: bottom;
+}
+
+.searchbox_input {
+	width: 100%;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	border: 1px solid #ddd;
+}
+
+.searchbox input[type="text"] {
+	width: 100%;
+	box-sizing: border-box;
+	border: 0;
+	padding: 0 8px;
+	margin: 0;
+	height: 32px;
+}
+
+::placeholder { color:#999; opacity:1; }
+:-ms-input-placeholder { color:#999 !important; }
+::-ms-input-placeholder { color:#999; }
+
+.searchbox input[type="submit"] {
+	display: none;
+}
+
+.searchbox_select {
+	position: relative;
+}
+.searchbox_select::before {
+	-font-family: sans-serif;
+	content: "\25BC";
+	font-size: 16px;
+	position: absolute;
+	right: 8px;
+	top: 6px;
+	color: #bbb;
+	pointer-events: none;
+}
+.searchbox_select:hover::before {
+	color: #666;
+}
+
+.searchbox_select select {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	border: none;
+	height: 32px;
+	padding: 0 32px 0 8px;
+	cursor: pointer;
+	background-color: #fff;
+}
+.searchbox_select select::-ms-expand { /* Internet Explorer */
+	display: none;
+}
+.searchbox_select select:focus::-ms-value { /* Internet Explorer */
+	color: #444;
+	background-color: #fff;
+}
+
+.searchbox_submit {
+	stroke: #999;
+	height: 32px;
+	width: 22px;
+	border: 0;
+	padding: 0 8px;
+	margin: 0;
+	vertical-align: bottom;
+	cursor: pointer;
+}
+.searchbox_submit:hover {
+	stroke: #666;
+	background-color: #eee;
+}
+.searchbox_submit:active {
+	stroke: #000;
+	background-color: #ddd;
+}
+
+.startpage_info {
+	position: fixed;
+	display: block;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: 0;
+	padding: 3px;
+	text-align: center;
+	background-color: #eee;
+	color: #999;
+	font-size: 12px;
+}
+
+</style>
+</head>
+<body>
+
+
+
+
+
+
+<!-- BEGIN Search Engines -->
+
+<svg style="display:none;" viewbox="0 0 24 24">
+	<defs>
+		<symbol id="symbol_search" viewbox="0 0 24 24">
+			<line x1="14" y1="14" x2="17" y2="17" stroke-width="1" />
+			<line x1="15" y1="15" x2="22" y2="22" stroke-width="3" />
+			<circle cx="9" cy="9" r="7" stroke-width="2" fill="none" />
+		</symbol>
+	</defs>
+</svg>
+
+<div class="search">
+
+<form name="form_google" action="https://www.google.de/search" method="get" onsubmit="return SubmitGoogle();">
+	<div class="div_table searchbox">
+		<div class="div_row">
+			<div class="div_cell searchbox_icon">
+				<a href="https://www.google.de/" title="Google"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAINUExURQAAAP////7+/v////7+/v////7+/v7+/v////////7+/v7+/v7+/v7+/v7+/v7+/v////7+/v7+/v7+/v7+/v7+/v39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/f39/TSoUzWlYDWoVDapVDegdzepVjiqVjyoUD6Oyj6sWz6sXEGJ40KF8UKF9EawYkawY0mxZUyyZ1SQ9VS2bly5dWCZ9mOxqGS8e2W9fWe+fmzAgnen93vGj4awM43On4/HgpXSpZvSsZ/B+aHXr6PYsaXF+qjH+qnI+qrI+qrat6vbuLDdvLO1IbfgwrnhxL/V+8HX+8LlzMPY/Nfu3dju3trv4N7q/eTCLub06ufw/uf16+pDNepENupFN+pGOOtJNOtKPetLPutMP+xTRuxVSOxYTOz37+1cUO5lWe5mWu9sYe9yaPB0avD58vF3IPF/dvGBePKKgfKOhvOUjPP3/vSQbfSbk/SblPWTFfWhmvWlnvWnoPa8Cfb5/ve0rve1r/e4s/e6tfi/uvmuIfnLx/nMyPr8//r9+/u5B/u8Bfu9B/vCHPzNRvzOR/zSWPzTWfzk4vzm5Pzn5f3cff3fhv3fiP3w7v7y8v719P723f723//7+//+/v///+Ea1KUAAAAxdFJOUwAICQoLDA0ODyIjJCUmJy8wMlZXWVqHiouNmZqcnZ/Iy9DS09Xo6uvs7fX29/n6+/wgsYR5AAAB5ElEQVQYGW3BhV8TYRzA4R8gIAwQacZgY8IBg22cgX0GdiN2t6KHjd3dgf2CBdj6/Rt9bxuLz3geScgt9/haQqFmn6csV9IV1bUR11pbIKmyqttJEa7KlCSFDaTxuyRuYhOOocdX+04cP3vl0VccRrHEFDahDd/stWN6bwyjGS6JGNeA1n/aTnLmFZo/UxzVaE/sVLdwVIpW1A702xEX7z9/8eCSbdu3/+EIu0SkDhg6ZWsX3hLx5twdYjwi49uAe7Z2+ScxvxgVyJFy4PeH67bd94MxlIoH+KbUw5MvGYtbfMBHpdTrv4zFKy3AoFLqC1FWwh7AkBAwoJQaIcpK2AQEJQQMKKVGiLISuoGgNAODSqnPRFkJWwFDfMAnpdSR9yQ5bGl7Aa94gO9K7ZyxgySbLe0o4JYy4M/TNaY57zxxdzsty1qCViK5rcA6U1t8jZh3qyxtCxDIFqkFemaZ2sJ9RBxaOteyrM5nQI2IFISBXWbEorXbtnctm2JOm2NZ+4FQvmhVaBvNFJNndqNViCNrEtru2WaSjvVo9RkS4TLQjq2eao5acQCtMU9iig0cPRtWLpjeMX9510EcjRMkzuUnTX2eJMmsDJMiVJEhqVyeAHGBmnxJl1Pq9hrBoOF1l2RL3H8yg5lWgHLlTwAAAABJRU5ErkJggg" width="32" height="32" alt="Google"></a>
+			</div>
+			<div class="div_cell searchbox_input"><div class="div_table"><div class="div_row">
+				<div class="div_cell" style="width:100%;">
+					<input type="text" maxlength="255" placeholder="Google" autocomplete="on" name="q" value="">
+				</div>
+				<div class="div_cell searchbox_select">
+					<select id="source_google" name="tbm">
+						<option value="">Web</option>
+						<option value="isch">Images</option>
+						<option value="vid">Videos</option>
+						<option value="nws">News</option>
+						<option value="maps">Maps</option>
+						<option value="bks">Books</option>
+						<option value="shop">Shopping</option>
+					</select>
+				</div>
+				<div class="div_cell">
+					<label>
+						<input type="submit">
+						<svg class="searchbox_submit">
+							<use xlink:href="#symbol_search" />
+						</svg>
+					</label>
+				</div>
+			</div></div></div>
+		</div>
+	</div>
+</form>
+
+<form action="https://duckduckgo.com/" method="get">
+	<div class="div_table searchbox">
+		<div class="div_row">
+			<div class="div_cell searchbox_icon">
+				<a href="https://duckduckgo.com/" title="DuckDuckGo"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJPUExURQAAAP+AVf9tSd9gNeNbM+NZN99aNuBYM95ZM99YM99YNN9YM95YNN5ZNN5ZNN5ZNN5YM99ZM1FuolVxpFqzRlq0Rl+1TWK3TmR9rGS8RmW8Rma9R2i5SGq4Rm6+VXfEXHuqQn6TuoClQofJc4qdwKGwzaOIPKSHPKemX6e10KiFPKuCO7XfprbC2LbgqLh3OcHktMbP4MbmusfQ4c3V5NDrx9bd6dhcNNxZNN1ZM915V93x1t5YM95ZNd5aM95bM95cON9eO99hP9/l7uBiP+BjQeBkQuBlQ+BnReFmL+FoR+FpSOFrS+JnLuJoLuJsS+JuT+JwUeNyU+N0VuN2V+R6XOSzqeVzKuV+YuV/Y+Z2KeaBZeaCZ+aDZ+aFaueJb+iNdOiPdumDJemTe+n25eqUfer25euJIuuag+uahOubheueiOueieyNIuyOIeyjj+2lku6ZHe6bHe6pl+6rme6smu6tm+6zoe+vne+xoO+yoe/y9/CfG/ChGvCzo/C3p/GmGfG4qPG4qfG6q/G8rvKnGfK+r/LAsvLAs/LBs/LCtPOpGPOsF/PGuvPHu/StFvSvFvTKv/WyFfXOw/a7Iva/Wvb4+/e5Eve6EvfXzvf5+/jc1Pjc1fjg2fjg2vj89vnCEPng2vni3Pnk3/n6/PrFDvrm4fro4/rq5fvKDfvq5vvt6fvv6/zLDPzv7Pzx7vzx7/zy7/zz8Pzz8f3QC/3RCv3SCv3TD/318/359/7jZP7jZf7mc/79/P7+///zvP/30//87//+9v/++P///wviwisAAAASdFJOUwAGBxgtLkeClZa/x9nj8fLz9NPaA5UAAAJNSURBVDjLhVP3exJBED2IcnTB7tp7713HFtFoMKJELDHGEhsgdpSgolggwV5jS9SohxE1KHr2Pn+Yd3u355F8fs5POztvZ2bfvOE4zQwms9XuctmtZpOB62glFicEwrF0OhYOgNNS0i5s5N2+ZC6bioZC0VQ2l/S5eWPRc5snUYhXgmqV8UKi1KZL0tnhFzJe0Jk3I/gdnbT3jup8ENafPrt/1V9IMF/tUHMYbf58DcChNkS849cQNXm/TemD9whB6aK8vPY+4uvdSxkiJHh4WsCdaJD9JdeR2puNDJFJuOUiFl+B9ncPVXu1jHVa8Fkk/pzJOtnbiosn35LjM8avZSniSaeBM0GO/v8kTmMpPpYxPnJg4syBLHWuIj45RuPDp9ayFNmAmbPuSdFzPWLvrndlQLdhZxggFbZy9liUno8gjh5MM3zDephfdfD4OoBozM650iEK2MI6+PXj+83LL0XxaZVERdqlAVYo4d9f3ouSvbu2bYHMVbqLVgLaKOCz+PbU+XOR5cqdXMIaVpoEhchPYqNuqHKT7JtwmAJ+3hCvRHbtPdHYulL9JiMKNitNrK6IXHjYevtABSNKojpOAWUKYI2uAqVaGxY8o4AdOlnRYcnjzlD/IgXIo585Wz9uJhjYh3PH7cQPC2eN7D+Rik4o5fWSgw04ifQdOqDfIELGFElOEu0mSbSw6OsUQroT0oeQEUWiVWTf4IVH0wnp2aPXqCFkbLHs1cWpu7R94IQHiI/nzTnabnHY6r1obmppaWp+3nH1/r+8/17/Pw7FM0/uLSzNAAAAAElFTkSuQmCC" width="32" height="32" alt="DuckDuckGo"></a>
+			</div>
+			<div class="div_cell searchbox_input"><div class="div_table"><div class="div_row">
+				<div class="div_cell" style="width:100%;">
+					<input type="text" maxlength="255" placeholder="DuckDuckGo" autocomplete="on" name="q" value="" autofocus>
+					<input type="hidden" name="kp" value="-2">
+					<input type="hidden" name="kn" value="1">
+				</div>
+				<div class="div_cell">
+					<label>
+						<input type="submit">
+						<svg class="searchbox_submit">
+							<use xlink:href="#symbol_search" />
+						</svg>
+					</label>
+				</div>
+			</div></div></div>
+		</div>
+	</div>
+</form>
+
+<div class="search_space"></div>
+
+<form action="https://www.startpage.com/do/search" method="get">
+	<div class="div_table searchbox">
+		<div class="div_row">
+			<div class="div_cell searchbox_icon">
+				<a href="https://www.startpage.com/" title="Startpage.com"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABgUExURR0mQiApRSgxTDM8VUNKYlZccmJx/2Ry/2Vz/2txg2x5/3N//3eE/3+ElJGWo5Sd/52hrqCp/6aptK61/6+zvb7BycDG/83P1dPX/9zd4t/i/+jq/+nq7ezu//X19v///+lU4xEAAABvSURBVDjL7ZJBCsNQCESfxkW7CPT+ZzUzXYRP+kNpN90U4kqdJ6Ng3PgcyQX8DVAj8RsxgBJEkHsVh+h9RnXPXMhBHI4Cg6jHl+VqbhuxIYSREBQYbZJbbhrj4W+AWLuNjf26+3zJuTcDcf3Db4AnbIcoSG3kumEAAAAASUVORK5CYII" width="32" height="32" alt="Startpage.com"></a>
+			</div>
+			<div class="div_cell searchbox_input"><div class="div_table"><div class="div_row">
+				<div class="div_cell" style="width:100%;">
+					<input type="text" maxlength="255" placeholder="Startpage.com" autocomplete="on" name="q" value="">
+					<input type="hidden" name="prfe" value="36c84513558a2d34bf0d89ea505333ad761002405484af240c1c89932309a9bc559a4c3539b4c3d7600bf14a6d642703">
+				</div>
+				<div class="div_cell">
+					<label>
+						<input type="submit">
+						<svg class="searchbox_submit">
+							<use xlink:href="#symbol_search" />
+						</svg>
+					</label>
+				</div>
+			</div></div></div>
+		</div>
+	</div>
+</form>
+
+
+<form name="form_bing" action="https://www.bing.com/search" method="get" onsubmit="return SubmitBing();">
+	<div class="div_table searchbox">
+		<div class="div_row">
+			<div class="div_cell searchbox_icon">
+				<a href="https://www.bing.com/" title="Bing"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIxSURBVFhH7Zc/SBtRHMeTWqkgtmgJDlkEEQfnQrcMgpvYDhkCgRDu8o+YMYUuzdZBFCcH93aQ4lIFEYOabA6CTg4KbSl06KCgwVKaP/380hc5jstdkrt0yhc+vJf3fr/3+ybv7j3iMyuRSLyFvVQqFcnlcoFCofBITf0fUfxdMplsCPSvYZf+q3g8HmDa/y+qjzIaMFBnvKxC+qs2BuTXOFMh/dXAwMDAwICTATkddV2fo33STPBaTgZisdgI/W34ADpH9kw4HB5qJnshJwMiimp8PhL4NQ5oP6bT6RjjQRXSuzo0EGRMCjdNGCgyvgGLbNHTni4yFnE0IAtjYsVQ2IoirJI7r2naRMdmSHI0IOJzCA7BqriZHdgkzfk2JbAjA/l8fozxLVXAjhPiftLWSPPOgIhtiDBn9SwIZbhivtpagxRvDYiy2exz5pbhM0jhEpyT88u8BuHeG2hJDihi1uDGKl8grD8GmJsm5hP8NuaYIdRbA4w/g/dQacXZQYo3BuSdZizM2A9zXDuIrZPqzkAoFHrMkfuSfskqpg1V4k9hQZWwVzsD8JU5uYT+WMxZQuw37gqtq5vTxkA3VFhnLZPJjKtlO5cbA+TWYJcDakot1716MUCO/HG5oL/o+q8cC+lwby5iw3f2OReNRkfVEq7lZ+9esPAxRmqmYg8wdwfrXLWTKs9bUWSYb/aa9tJYWKDwPq/jbKPRcH6v3UpeIQq+ofAt7RcesCXX+/wgn+8vaTBrJdolC/8AAAAASUVORK5CYII" width="32" height="32" alt="Bing"></a>
+			</div>
+			<div class="div_cell searchbox_input"><div class="div_table"><div class="div_row">
+				<div class="div_cell" style="width:100%;">
+					<input type="text" maxlength="255" placeholder="Bing" autocomplete="on" name="q" value="">
+				</div>
+				<div class="div_cell searchbox_select">
+					<select id="source_bing">
+						<option value="web">Web</option>
+						<option value="images">Images</option>
+						<option value="videos">Videos</option>
+						<option value="news">News</option>
+						<option value="maps">Maps</option>
+					</select>
+				</div>
+				<div class="div_cell">
+					<label>
+						<input type="submit">
+						<svg class="searchbox_submit">
+							<use xlink:href="#symbol_search" />
+						</svg>
+					</label>
+				</div>
+			</div></div></div>
+		</div>
+	</div>
+</form>
+
+<div class="search_space"></div>
+
+<form action="https://www.youtube.com/results" method="get">
+	<div class="div_table searchbox">
+		<div class="div_row">
+			<div class="div_cell searchbox_icon">
+				<a href="https://www.youtube.com/" title="YouTube"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA/UExURf////8AAP8AAP8AAP8AAP8AAP8AAP8AAP8AAP8AAP8AAP8QEP8gIP9AQP9QUP+AgP+QkP/AwP/Q0P/w8P///74S9LwAAAAKdFJOUwAQIDBAYICwwPBGX41FAAAAcklEQVQ4y9WSSQ6AIBAEG9lx1/n/Wz1ojCFAH7xo3chUwiwN/AZlrHPhgXPWqLusQyoS9FWPqUI8DZ+qeABAagAAXUtQAMzjPeWCyQRZByLIPhNBZBuJILL07wTyBWuSjVlcFF01PRY/Nw0MjRwP7ec5APMDGDUIZ0AgAAAAAElFTkSuQmCC" width="32" height="32" alt="YouTube"></a>
+			</div>
+			<div class="div_cell searchbox_input"><div class="div_table"><div class="div_row">
+				<div class="div_cell" style="width:100%;">
+					<input type="text" maxlength="255" placeholder="YouTube" autocomplete="on" name="search_query" value="">
+				</div>
+				<div class="div_cell">
+					<label>
+						<input type="submit">
+						<svg class="searchbox_submit">
+							<use xlink:href="#symbol_search" />
+						</svg>
+					</label>
+				</div>
+			</div></div></div>
+		</div>
+	</div>
+</form>
+
+<form action="https://en.wikipedia.org/w/index.php" method="get">
+	<div class="div_table searchbox">
+		<div class="div_row">
+			<div class="div_cell searchbox_icon">
+				<a href="https://www.wikipedia.org/" title="Wikipedia"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAAzUExURQAAAAAAAAEBARYWFicnJzU1NUdHR1lZWWVlZXh4eIiIiJmZma6urszMzNfX1+np6f7+/jp3AD4AAAABdFJOUwBA5thmAAABA0lEQVQ4y72TwXLDIAxEvQs2GBN4//+1PUAysdM27XSmOsHwkJZFWpZlWfgilhF8E+/O4QcAb+JfgNWSnCBKCgclSDo4oiQlFujB6gBZugFNsQEkpT5KFKkCdCsDdexIoU8NPWgFYLc7xI2Bl4fI/Z4ieKf6NujQH0C3t0eKmIb8kJ+emew2U6Sxoqo9Ac0e93Z5XGTdTkZtcp/FBnBzPQHV2kdlD215vVi9joNquwDdxwWocgFiTgpACS+fFRygujWpQCgvwGEfxAybAnVIPgE9KFY1qHbZ8if9sHuasdrTpDPQPe2smsZfOypPN4l3ky5A36eyVn7Vk3+frPfD+2b8PwDLUDVT6oRxRgAAAABJRU5ErkJggg" width="32" height="32" alt="Wikipedia"></a>
+			</div>
+			<div class="div_cell searchbox_input"><div class="div_table"><div class="div_row">
+				<div class="div_cell" style="width:100%;">
+					<input type="text" maxlength="255" placeholder="Wikipedia" autocomplete="on" name="title" value="">
+				</div>
+				<div class="div_cell">
+					<label>
+						<input type="submit">
+						<svg class="searchbox_submit">
+							<use xlink:href="#symbol_search" />
+						</svg>
+					</label>
+				</div>
+			</div></div></div>
+		</div>
+	</div>
+</form>
+
+<form action="https://www.imdb.com/find" method="get">
+	<div class="div_table searchbox">
+		<div class="div_row">
+			<div class="div_cell searchbox_icon">
+				<a href="https://www.imdb.com/" title="IMDB"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB7UExURQAAAAYFAR8aBTEpCEY7DExCDFRGDmVVEWpbEW5gEZF9F5dvEJpzEJ95EKN9EKaBEKmFEKuPHa6KEK6UHbScHrWMELaUELeRIruWIrukHr2dEL+bIsCiEMGdIsSmEMelIseqEM6vIs61IdS2I9e9ItzAI97DI+fPI+3XI9TytvYAAADVSURBVBgZhcHtKkRRFADQdbdjwpiM8gDK+z8TP0j+yGdXubO3IQ1F5641nOtrDvS8hRmRurIpXZG6MlJXhhlN6Qoz2kS+Wk2jw/bMahpZhny1sjU15WZ0fJXi4hZ3if3zm9GxT2EnX3wZ9rxPmK5fEKqKsvWId4ZTnovL8XZTQhWK8BZ+O+OpRNkpf1VsfFuoBYWiUJRNk7bS/1KgfKqwtFO+RfqRJHnPER5JGXb2rX0pi8aQ9tYMJ2s9D2FGmNEq9VSY0Sr1VLPRFaWrmtIVpauGpb4PEJpfnfhEqQsAAAAASUVORK5CYII" width="32" height="32" alt="IMDB"></a>
+			</div>
+			<div class="div_cell searchbox_input"><div class="div_table"><div class="div_row">
+				<div class="div_cell" style="width:100%;">
+					<input type="text" maxlength="255" placeholder="IMDB" autocomplete="on" name="q" value="">
+				</div>
+				<div class="div_cell searchbox_select">
+					<select name="s">
+						<option value="">All</option>
+						<option value="tt">Titles</option>
+						<option value="ep">TV Episodes</option>
+						<option value="nm">Celebs</option>
+						<option value="co">Companies</option>
+						<option value="kw">Keywords</option>
+					</select>
+				</div>
+				<div class="div_cell">
+					<label>
+						<input type="submit">
+						<svg class="searchbox_submit">
+							<use xlink:href="#symbol_search" />
+						</svg>
+					</label>
+				</div>
+			</div></div></div>
+		</div>
+	</div>
+</form>
+
+</div>
+
+<script>
+
+function SubmitGoogle()
+{
+	var e = document.getElementById("source_google");
+	var val = e.options[e.selectedIndex].value;
+	if (val == "maps") {
+		document.form_google.action = "https://www.google.com/maps";
+	} else {
+		document.form_google.action = "https://www.google.com/search";
+	}
+	if ((val == "") || (val == "maps")) e.name = "";
+	return true;
+}
+
+function SubmitBing()
+{
+	var e = document.getElementById("source_bing");
+	var val = e.options[e.selectedIndex].value;
+	if (val == "images") {
+		document.form_bing.action = "https://www.bing.com/images/search";
+	} else if (val == "videos") {
+		document.form_bing.action = "https://www.bing.com/videos/search";
+	} else if (val == "news") {
+		document.form_bing.action = "https://www.bing.com/news/search";
+	} else if (val == "maps") {
+		document.form_bing.action = "https://www.bing.com/maps";
+	} else {
+		document.form_bing.action = "https://www.bing.com/search";
+	}
+	return true;
+}
+
+</script>
+
+<!-- END Search Engines -->
+
+
+
+<br><br>
+<div class="startpage_info">
+StartPage</a>
+<div style="float:right;">v1.1</div>
+</div>
+
+
+
+</body>
+</html>
